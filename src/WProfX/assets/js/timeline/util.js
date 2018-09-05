@@ -349,6 +349,7 @@ util.smartTrim=function(string, maxLength) {
 
 util.formatobjInfo=function(_elem){
   var _url=null;
+  var _fromScript = null
   var _activity_id = null;
   var _startTime=null;
   var _endTime= null;
@@ -360,6 +361,10 @@ util.formatobjInfo=function(_elem){
     _url = _elem.url;
   }
   _url = util.smartTrim(_url, 100);
+  if ('fromScript' in _elem){
+    _fromScript = _elem.fromScript;
+  }
+  _fromScript = util.smartTrim(_fromScript, 100);
   _activity_id = _elem.activityId;
   _startTime = _elem.startTime;
   _endTime = _elem.endTime;
@@ -370,12 +375,14 @@ util.formatobjInfo=function(_elem){
     _desc = '<span class="jsonId"> Id: ' + '<span class="jsonString"> ' + _activity_id +  '</span>' +
             ', <span class="jsonId"> mimeType: ' + '<span class="jsonString"> ' + _mimeType +  '</span>' +
             ', <span class="jsonId"> transferSize: ' + '<span class="jsonNumber"> ' + _size + '</span>' +
+            ', <span class="jsonId"> fromScript: ' + '<span class="jsonString"> ' + _fromScript + '</span>' +
             '<br> <span class="jsonId"> startTime: ' + '<span class="jsonNumber"> ' + _startTime +  '(ms)</span>' +
             ', <span class="jsonId"> endTime: ' + '<span class="jsonNumber"> ' + _endTime +  '(ms)</span>' +
             ', <span class="jsonId"> URL: ' + '<span class="jsonString"> ' + _url +  '</span>' ;
   }
   else{
     _desc = '<span class="jsonId"> Id: ' + '<span class="jsonString"> ' + _activity_id +  '</span>' +
+            ', <span class="jsonId"> fromScript: ' + '<span class="jsonString"> ' + _fromScript + '</span>' +
             '<br> <span class="jsonId"> startTime: ' + '<span class="jsonNumber"> ' + _startTime +  '(ms)</span>' +
             ', <span class="jsonId"> endTime: ' + '<span class="jsonNumber"> ' + _endTime +  '(ms)</span>' +
             ', <span class="jsonId"> URL: ' + '<span class="jsonString"> ' + _url +  '</span>' ;
