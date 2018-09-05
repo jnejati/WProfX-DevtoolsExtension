@@ -1,0 +1,20 @@
+{
+    "name": "WProfX",
+    "version": "0.2",
+    "description": "Dependency tool",
+    "devtools_page": "devtools.html",
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "permissions": [
+        "storage",
+        "tabs",
+        "debugger",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "manifest_version": 2,
+    "icons": { "128": "wprofxlogo.png"}
+}

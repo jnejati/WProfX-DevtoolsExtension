@@ -1,0 +1,1319 @@
+.btn-main {
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:rgb(61,114,231);
+  border: none;
+  margin: auto;
+  margin-bottom:8px;
+
+}
+.btn-main:hover {
+  background-color: rgb(48,62,254);
+}
+.btn-rerun {
+
+  display: inline-block;
+  padding: 5px 15px;
+  /* font-size: 14px; */
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:rgb(61,114,231) !important;
+  border: none;
+  margin: auto;
+  margin-top:7px;
+  margin-bottom:8px;
+  margin-left:5px;
+  float:right !important;
+
+
+}
+.btn-rerun:hover {
+  background-color: rgb(48,62,254) !important;
+}
+
+.img-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    padding-top : 35px;
+    width: 13%;
+}
+.txt-logo{
+  display:flex;
+  justify-content:center;
+  color:rgb(90, 90, 90);
+}
+.btn-prime{
+  display:flex;
+  justify-content:center;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ccounter {
+  /* margin: 4px; */
+  height: 16px;
+  width : 24px;
+  text-align: center;
+  cursor: pointer;
+}
+.ccounter:hover{
+  background-color:rgb(61,114,231);
+  color: #fff;
+
+}
+
+.ctext {
+  text-align: center;
+  width: 25px;
+  /* margin: 4px; */
+  padding: 2px;
+  /* color: rgb(214,0,4); */
+  /* color: rgb(48,62,254); */
+  color: rgb(110,110,110);
+
+  height: 16px;
+
+}
+#descr {
+	pointer-events: none;
+	font-size: 8px;
+	width: 150px;
+	height: 10px;
+	position: relative;
+}
+
+/*  start dblclick*/
+/* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: visible;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+.tooltip {
+    background: hsl(0, 0%, 95%);
+    border-radius: 2px;
+    color: hsl(0, 0%, 20%);
+    padding: 5px 8px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    -webkit-filter: drop-shadow(0 1px 2px hsla(0, 0%, 0%, 0.3));
+    border: 1px solid hsla(0, 0%, 0%, 0.1);
+    background-clip: padding-box;
+    box-sizing: border-box;
+    position: absolute;
+    visibility: hidden;
+    transition: visibility 0s 100ms, opacity 150ms cubic-bezier(0, 0, .2, 1);
+    z-index: 20001;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.tooltip-breakword {
+    word-break: break-word;
+}
+
+.tooltip.shown {
+    visibility: visible;
+    transition-delay: 600ms;
+    opacity: 1;
+}
+
+.tooltip.shown.instant {
+    transition-delay: 0s;
+}
+
+.tooltip-shortcut {
+    color: hsl(0, 0%, 45%);
+    display: inline-block;
+    margin-left: 8px;
+    flex: 0 0 auto;
+}
+/* end doubleclick */
+
+#myProgress {
+    width: 90%;
+    background-color: grey;
+    color:rgb(90, 90, 90);
+}
+#myBar {
+    width: 1%;
+    height: 20px;
+    background-color: rgb(61,114,231);
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+.legend-wrapper {
+    /* width: 100%; */
+    width: auto;
+    text-align: center;
+}
+#legend {
+    display: inline-block;
+    margin: auto;
+}
+#legend div {
+	display: inline-block;
+  /* resize: both; */
+  /* overflow: auto; */
+	width: 15px;
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+#legend span {
+	color: gray;
+	margin-right: 5px;
+	font-size: 10px;
+	vertical-align: top;
+}
+
+#metricLegend div {
+	display: inline-block;
+  /* resize: both; */
+  /* overflow: auto; */
+	width: 20px;
+  height:1
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+#metricLegend span {
+	color: gray;
+	margin-right: 5px;
+	font-size: 10px;
+	vertical-align: top;
+}
+.dependLines {
+	stroke: black;
+	stroke-width: 1;
+	pointer-events: none;
+	visibility: hidden;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    /* width: 100%;
+    padding-bottom: 100%; /* aspect ratio */ */
+    vertical-align: top;
+    overflow: hidden;
+
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.pageHeader{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+
+div.sticky {
+
+font-size: 11px !important;
+font-family: Menlo, monospace;
+font-style: italic;
+ color: rgb(86, 86, 86); /*grey*/
+/* box-sizing: border-box; */
+/* position: -webkit-sticky; */
+/* position: sticky; */
+/* top: 0; */
+/* padding-top : 35px; */
+background-color: white;
+background-color: rgb(248,248,248 );
+
+
+/* padding: 50px; */
+/* float : right; */
+margin-top: 30px;
+ z-index: 500;
+
+}
+.jsonString {
+  color: rgb(195,3,27); /*red*/
+}
+.jsonNumber {
+  color: rgb(54,33,213);/*blue*/
+}
+.jsonId {
+  color: rgb(151,66,2);
+}
+
+.txtArea{
+  position:relative;
+  margin: 0; /* don't want to add to container size */
+  border: 0; /* don't want to add to container size */
+  width: 600px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+}
+
+
+/* .myIcons{
+  position: relative;
+  width: 10%;
+  height: 10%;
+} */
+
+/*
+ * Copyright (c) 2014 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file.
+ */
+
+:host {
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center !important;
+}
+
+input {
+    height: 12px;
+    width: 12px;
+    flex-shrink: 0;
+}
+
+input:focus {
+    outline: auto 5px -webkit-focus-ring-color;
+}
+
+input.dt-checkbox-themed {
+    -webkit-appearance: none;
+    margin: auto 5px auto 2px;
+    border: 1px solid rgb(45, 45, 45);
+    border-radius: 3px;
+    background-color: rgb(102, 102, 102);
+}
+
+input.dt-checkbox-themed:after {
+    content: '';
+    line-height: 10px;
+    position: absolute;
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    background: none;
+}
+
+input.dt-checkbox-themed:checked:after {
+    background-color: #333;
+}
+
+input.dt-checkbox-themed:after {
+    -webkit-mask-image: url(Images/checkboxCheckmark.png);
+    -webkit-mask-size: 11px 11px;
+    -webkit-mask-position: 0 0;
+}
+
+:host-context(.-theme-with-dark-background) input:not(.dt-checkbox-themed) {
+    filter: invert(80%);
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.1) {
+input.dt-checkbox-themed:after {
+    -webkit-mask-image: url(Images/checkboxCheckmark_2x.png);
+}
+
+} /* media */
+
+.dt-checkbox-text {
+    margin-left: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dt-checkbox-subtitle {
+    color: gray;
+}
+
+/* toolbar */
+
+/*
+ * Copyright (c) 2014 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file.*/
+
+
+:host {
+    flex: none;
+    padding: 0 2px;
+}
+
+.toolbar-shadow {
+
+    margin: 0;
+    padding: 0 ;
+    box-sizing: border-box;
+    border-bottom: 1px solid;
+    border-color: rgb(208, 208, 208);;
+    background-color: rgb(243, 243, 243);
+    min-width: 0;
+    min-height: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    white-space: nowrap;
+    height: 26px;
+    overflow: hidden;
+    z-index: 12;
+    display: flex;
+    flex: none;
+    align-items: center;
+}
+
+.toolbar-shadow.wrappable {
+    flex-wrap: wrap;
+    overflow: visible;
+}
+
+.toolbar-shadow.wrappable-reverse {
+    flex-direction: row-reverse;
+}
+
+.toolbar-shadow.toolbar-grow-vertical {
+    height: initial;
+}
+
+.toolbar-shadow.vertical {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+}
+
+.toolbar-item {
+    position: relative;
+    display: flex;
+    background-color: transparent;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 26px;
+    border: none;
+    color: #5a5a5a;
+}
+
+select.toolbar-item:disabled {
+    opacity: 0.5;
+}
+
+.toolbar-dropdown-arrow {
+    background-color: #6D6D6D;
+    pointer-events: none;
+    flex: none;
+}
+
+select.toolbar-item:disabled + .toolbar-dropdown-arrow {
+    opacity: 0.5;
+}
+
+/* Toolbar item */
+
+.toolbar-button {
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 28px;
+    background: transparent;
+    border-radius: 0;
+}
+
+.toolbar-text {
+    margin: 0 5px;
+    flex: none;
+    color: #5a5a5a;
+}
+
+.toolbar-text:empty {
+    margin: 0;
+}
+
+.toolbar-has-dropdown {
+    justify-content: space-between;
+    padding: 0 3px 0 5px;
+}
+
+.toolbar-has-dropdown .toolbar-text {
+    margin: 0 4px 0 0;
+    text-overflow: ellipsis;
+    flex: auto;
+    overflow: hidden;
+    text-align: right;
+}
+
+.toolbar-button.dark-text .toolbar-dropdown-arrow {
+    background-color: #333;
+}
+
+.toolbar-has-glyph .toolbar-text {
+    margin-left: -4px;
+}
+
+.toolbar-button:not(.toolbar-has-glyph):not(.toolbar-has-dropdown):not(.largeicon-menu) {
+    font-weight: bold;
+}
+
+.toolbar-render-as-links * {
+    font-weight: initial;
+    color: rgb(17, 85, 204);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.toolbar-toggled-gray:not(.toolbar-render-as-links) .toolbar-button:not(.toolbar-has-glyph):not(.toolbar-has-dropdown):not(.largeicon-menu):hover {
+    background-color: var(--toolbar-bg-color);
+}
+
+.toolbar-glyph {
+    background-color: #5a5a5a;
+    flex: none;
+}
+
+/* Button */
+
+.toolbar-button:disabled {
+    opacity: 0.5;
+}
+
+.toolbar-button.dark-text .toolbar-text{
+    color: #333 !important;
+}
+
+:not(.toolbar-render-as-links) .toolbar-button:enabled:hover:not(:active) .toolbar-glyph {
+    background-color: #333;
+}
+
+:not(.toolbar-render-as-links) .toolbar-button:enabled:hover:not(:active) .toolbar-text {
+    color: #333;
+}
+
+.toolbar-button.toolbar-state-on .toolbar-glyph,
+.toolbar-blue-on-hover .toolbar-button:not(.toolbar-state-on):enabled:hover:not(:active),
+.-theme-selection-color {
+    background-color: rgb(243,243,243);
+}
+
+.toolbar-button.toolbar-state-on .toolbar-text,
+.-theme-selection-color {
+    color: rgb(243,243,243);
+}
+
+.toolbar-blue-on-hover .toolbar-button:not(.toolbar-state-on):enabled:hover .toolbar-glyph {
+    background-color: white;
+}
+
+.toolbar-blue-on-hover .toolbar-button:not(.toolbar-state-on):enabled:hover .toolbar-text {
+    color: white;
+}
+
+.toolbar-button.toolbar-state-on:enabled:hover:not(:active) .toolbar-glyph,
+.toolbar-blue-on-hover .toolbar-button:not(.toolbar-state-on):enabled:active:hover,
+.-theme-selection-color {
+    background-color: rgb(243,243,243);
+}
+
+.toolbar-button.toolbar-state-on:enabled:hover:not(:active) .toolbar-text,
+.-theme-selection-color {
+    color: rgb(243,243,243);
+}
+
+.toolbar-toggled-gray .toolbar-button.toolbar-state-on {
+    background-color: var(--toolbar-bg-color) !important;
+}
+
+.toolbar-button.toolbar-state-on.toolbar-toggle-with-red-color .toolbar-glyph,
+.toolbar-button.toolbar-state-off.toolbar-default-with-red-color .toolbar-glyph {
+    background-color: rgb(216, 0, 0) !important;
+}
+
+:host-context(.-theme-with-dark-background) .toolbar-button.toolbar-state-on.toolbar-toggle-with-red-color .toolbar-glyph,
+:host-context(.-theme-with-dark-background) .toolbar-button.toolbar-state-off.toolbar-default-with-red-color .toolbar-glyph {
+    background-color: hsl(0, 100%, 65%) !important;
+}
+
+
+/* Checkbox */
+
+.toolbar-item.checkbox {
+    padding: 0 5px 0 2px;
+}
+
+.toolbar-item.checkbox:hover {
+    color: #333;
+}
+
+/* Select */
+
+.toolbar-select-container {
+    display: inline-flex;
+    flex-shrink: 0;
+    margin-right: 6px;
+}
+
+select.toolbar-item {
+    min-width: 38px;
+    -webkit-appearance: none;
+    border: 0;
+    border-radius: 0;
+    padding: 0 13px 0 5px;
+    margin-right: -10px;
+    position: relative;
+    height: 22px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+select.toolbar-item[data-keyboard-focus="true"]:focus {
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+}
+
+select.toolbar-item[data-keyboard-focus="true"]:focus > * {
+    background: white;
+}
+
+/* Input */
+
+.toolbar-input {
+    width: 120px;
+    height: 19px;
+    padding: 4px 3px 3px 3px;
+    margin: 1px 3px;
+    background-color: white;
+    border: 1px solid transparent ;
+    min-width: 35px;
+}
+
+.toolbar-input:hover {
+    box-shadow: var(--focus-ring-inactive-shadow);
+}
+
+.toolbar-input.focused {
+    box-shadow: var(--focus-ring-active-shadow);
+}
+
+.toolbar-input > input {
+    border: none;
+    flex-grow: 1;
+}
+
+.toolbar-input-clear-button {
+    opacity: 0.7;
+    flex-basis: 13px;
+    flex-shrink: 0;
+    height: 16px;
+}
+
+.toolbar-input-clear-button:hover {
+    opacity: 1;
+}
+
+.toolbar-input-empty .toolbar-input-clear-button {
+    display: none;
+}
+
+.toolbar-prompt-proxy {
+    flex: 1;
+}
+
+.toolbar-input-prompt {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: auto;
+}
+
+/* Separator */
+
+.toolbar-divider {
+    background-color: #ccc;
+    color: #d0d0d0;
+    width: 1px;
+    margin: 5px 4px;
+    height: 16px;
+}
+
+.toolbar-spacer {
+    flex: auto;
+}
+
+/* Long click */
+
+.long-click-glyph {
+    position: absolute;
+    background-color: #5a5a5a;
+    top: 0;
+    left:  0;
+}
+
+.toolbar-button.emulate-active {
+    background-color: rgb(163, 163, 163);
+}
+
+.toolbar-button[data-keyboard-focus="true"]:focus::after {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+    content: "";
+}
+
+.toolbar-shadow.floating {
+    flex-direction: column;
+    height: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-top: -1px;
+    width: 28px;
+    left: -2px;
+}
+
+input[is=history-input] {
+    border: none;
+    line-height: 16px;
+    padding: 1px;
+}
+
+input[is=history-input]:hover {
+    box-shadow: var(--focus-ring-inactive-shadow);
+}
+
+input[is=history-input]:focus {
+    box-shadow: var(--focus-ring-active-shadow);
+}
+/*
+ * Copyright 2015 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file.
+ */
+
+* {
+    /* This is required for correct sizing of flex items because we rely
+     * on an old version of the flexbox spec.
+     * Longer-term we should remove this, see crbug.com/473625 */
+    min-width: 0;
+    min-height: 0;
+}
+
+:host-context(.platform-mac) .monospace,
+:host-context(.platform-mac) .source-code,
+.platform-mac .monospace,
+.platform-mac .source-code {
+    font-size: 11px !important;
+    font-family: Menlo, monospace;
+}
+
+:host-context(.platform-windows) .monospace,
+:host-context(.platform-windows) .source-code,
+.platform-windows .monospace,
+.platform-windows .source-code {
+    font-size: 12px !important;
+    font-family: Consolas, Lucida Console, Courier New, monospace;
+}
+
+:host-context(.platform-linux) .monospace,
+:host-context(.platform-linux) .source-code,
+.platform-linux .monospace,
+.platform-linux .source-code {
+    font-size: 11px !important;
+    font-family: dejavu sans mono, monospace;
+}
+
+.source-code {
+    font-family: monospace;
+    font-size: 11px !important;
+    white-space: pre-wrap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:focus {
+    outline-width: 0;
+}
+
+img {
+    -webkit-user-drag: none;
+}
+
+iframe,
+a img {
+    border: none;
+}
+
+.fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+iframe.fill {
+    width: 100%;
+    height: 100%;
+}
+
+.widget {
+    position: relative;
+    flex: auto;
+    contain: layout style;
+}
+
+.hbox {
+    display: flex;
+    flex-direction: row !important;
+    position: relative;
+}
+
+.vbox {
+    display: flex;
+    flex-direction: column !important;
+    position: relative;
+}
+
+.view-container > .toolbar {
+    border-bottom: 1px solid #eee;
+}
+
+.flex-auto {
+    flex: auto;
+}
+
+.flex-auto-important {
+    flex: auto !important;
+}
+
+.flex-none {
+    flex: none;
+}
+
+.flex-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+iframe.widget {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.monospace {
+    font-size: 10px !important;
+    font-family: monospace;
+}
+
+.highlighted-search-result {
+    border-radius: 1px;
+    padding: 1px;
+    margin: -1px;
+    background-color: rgba(255, 255, 0, 0.8);
+}
+
+.-theme-with-dark-background .highlighted-search-result,
+:host-context(.-theme-with-dark-background) .highlighted-search-result {
+    background-color: hsl(133, 100%, 30%);
+    color: #333;
+}
+
+.link {
+    cursor: pointer;
+    text-decoration: underline;
+    color: rgb(17, 85, 204);
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+input {
+    background-color: white;
+}
+
+:host-context(.-theme-with-dark-background) input[type="checkbox"]::not(.-theme-preserve) {
+    -webkit-filter: invert(80%);
+}
+
+.harmony-input:not([type]),
+.harmony-input[type=number],
+.harmony-input[type=text] {
+    padding: 3px 6px;
+    height: 24px;
+    border: none;
+}
+
+.harmony-input:not([type]):not(.error-input):not(:invalid):hover,
+.harmony-input[type=number]:not(.error-input):not(:invalid):hover,
+.harmony-input[type=text]:not(.error-input):not(:invalid):hover {
+    box-shadow: var(--focus-ring-inactive-shadow);
+}
+
+.harmony-input:not([type]):not(.error-input):not(:invalid):focus,
+.harmony-input[type=number]:not(.error-input):not(:invalid):focus,
+.harmony-input[type=text]:not(.error-input):not(:invalid):focus {
+    box-shadow: var(--focus-ring-active-shadow);
+}
+
+.highlighted-search-result.current-search-result {
+    border-radius: 1px;
+    padding: 1px;
+    margin: -1px;
+    background-color: rgba(255, 127, 0, 0.8);
+}
+
+.dimmed {
+    opacity: 0.6;
+}
+
+.editing {
+    box-shadow: var(--drop-shadow);
+    background-color: white;
+    text-overflow: clip !important;
+    padding-left: 2px;
+    margin-left: -2px;
+    padding-right: 2px;
+    margin-right: -2px;
+    margin-bottom: -1px;
+    padding-bottom: 1px;
+    opacity: 1.0 !important;
+}
+
+.editing,
+.editing * {
+    color: #222 !important;
+    text-decoration: none !important;
+}
+
+.harmony-input:not([type]).error-input,
+.harmony-input[type=number].error-input,
+.harmony-input[type=text].error-input,
+.harmony-input:not([type]):invalid,
+.harmony-input[type=number]:invalid,
+.harmony-input[type=text]:invalid {
+    box-shadow: 0 0 0 1px #ff1a00;
+}
+
+.chrome-select {
+    -webkit-appearance: none;
+    -webkit-user-select: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    color: #333;
+    font: inherit;
+    margin: 0;
+    outline: none;
+    padding-right: 20px;
+    padding-left: 6px;
+    background-image: -webkit-image-set(url(Images/chromeSelect.png) 1x, url(Images/chromeSelect_2x.png) 2x);
+    background-color: hsl(0, 0%, 98%);
+    background-position: right center;
+    background-repeat: no-repeat;
+    min-height: 24px;
+    min-width: 80px;
+    background-size: 15px;
+}
+
+.chrome-select:enabled:active,
+.chrome-select:enabled:focus,
+.chrome-select:enabled:hover {
+    background-color: hsl(0, 0%, 96%);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.chrome-select:enabled:active {
+    background-color: #f2f2f2;
+}
+
+.chrome-select:enabled:focus {
+    border-color: transparent;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(66, 133, 244, 0.4);
+}
+
+.chrome-select:disabled {
+    opacity: 0.38;
+}
+
+.chrome-select optgroup,
+.chrome-select option {
+    background-color: #EEEEEE;
+    color: #222;
+}
+
+:not(.platform-mac).-theme-with-dark-background ::-webkit-scrollbar,
+:host-context(:not(.platform-mac).-theme-with-dark-background) ::-webkit-scrollbar {
+    width: 14px;
+}
+
+:not(.platform-mac).-theme-with-dark-background ::-webkit-scrollbar-track,
+:host-context(:not(.platform-mac).-theme-with-dark-background) ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(255,255,255,0.3);
+}
+
+:not(.platform-mac).-theme-with-dark-background ::-webkit-scrollbar-thumb,
+:host-context(:not(.platform-mac).-theme-with-dark-background) ::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: #333;
+    -webkit-box-shadow: inset 0 0 1px rgba(255,255,255,0.5);
+}
+
+:not(.platform-mac).-theme-with-dark-background ::-webkit-scrollbar-corner,
+:host-context(:not(.platform-mac).-theme-with-dark-background) ::-webkit-scrollbar-corner {
+    background-color: #242424;
+}
+
+.gray-info-message {
+    text-align: center;
+    font-style: italic;
+    padding: 6px;
+    color: #888;
+    white-space: nowrap;
+}
+
+label[is=dt-icon-label] {
+    flex: none;
+}
+
+.full-widget-dimmed-banner a {
+    color: inherit;
+}
+
+.full-widget-dimmed-banner {
+    color: #777;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 13px;
+    overflow: auto;
+    z-index: 500;
+}
+
+[is=ui-icon] {
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.-theme-with-dark-background [is=ui-icon].icon-invert,
+:host-context(.-theme-with-dark-background) [is=ui-icon].icon-invert {
+    filter: invert(80%) hue-rotate(180deg);
+}
+
+[is=ui-icon].icon-mask {
+    background-color: rgb(110, 110, 110);
+    -webkit-mask-position: var(--spritesheet-position);
+}
+
+[is=ui-icon]:not(.icon-mask) {
+    background-position: var(--spritesheet-position);
+}
+
+.spritesheet-smallicons:not(.icon-mask) {
+    background-image: -webkit-image-set(url(Images/smallIcons.png) 1x, url(Images/smallIcons_2x.png) 2x);
+}
+
+.spritesheet-smallicons.icon-mask {
+    -webkit-mask-image: -webkit-image-set(url(Images/smallIcons.png) 1x, url(Images/smallIcons_2x.png) 2x);
+}
+
+.spritesheet-largeicons:not(.icon-mask) {
+    background-image: -webkit-image-set(url(Images/largeIcons.png) 1x, url(Images/largeIcons_2x.png) 2x);
+}
+
+.spritesheet-largeicons.icon-mask {
+    -webkit-mask-image: -webkit-image-set(url(Images/largeIcons.png) 1x, url(Images/largeIcons_2x.png) 2x);
+}
+
+.spritesheet-mediumicons:not(.icon-mask) {
+    background-image: -webkit-image-set(url(Images/mediumIcons.png) 1x, url(Images/mediumIcons_2x.png) 2x);
+}
+
+.spritesheet-mediumicons.icon-mask {
+    -webkit-mask-image: -webkit-image-set(url(Images/mediumIcons.png) 1x, url(Images/mediumIcons_2x.png) 2x);
+}
+
+.spritesheet-arrowicons {
+    background-image: url(Images/popoverArrows.png);
+}
+
+.force-white-icons [is=ui-icon].spritesheet-smallicons, [is=ui-icon].force-white-icons.spritesheet-smallicons, -theme-preserve {
+    -webkit-mask-image: -webkit-image-set(url(Images/smallIcons.png) 1x, url(Images/smallIcons_2x.png) 2x);
+    -webkit-mask-position: var(--spritesheet-position);
+    background: #fafafa !important;
+}
+
+.force-white-icons [is=ui-icon].spritesheet-largeicons, [is=ui-icon].force-white-icons.spritesheet-largeicons, -theme-preserve {
+    -webkit-mask-image: -webkit-image-set(url(Images/largeIcons.png) 1x, url(Images/largeIcons_2x.png) 2x);
+    -webkit-mask-position: var(--spritesheet-position);
+    background: #fafafa !important;
+}
+
+.force-white-icons [is=ui-icon].spritesheet-mediumicons, [is=ui-icon].force-white-icons.spritesheet-mediumicons, -theme-preserve {
+    -webkit-mask-image: -webkit-image-set(url(Images/mediumIcons.png) 1x, url(Images/mediumIcons_2x.png) 2x);
+    -webkit-mask-position: var(--spritesheet-position);
+    background: #fafafa !important;
+}
+/*
+ * Copyright (C) 2006, 2007, 2008 Apple Inc.  All rights reserved.
+ * Copyright (C) 2009 Anthony Ricaud <rik@webkit.org>
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1.  Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ * 2.  Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in the
+ *     documentation and/or other materials provided with the distribution.
+ * 3.  Neither the name of Apple Computer, Inc. ("Apple") nor the names of
+ *     its contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY APPLE AND ITS CONTRIBUTORS "AS IS" AND ANY
+ * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL APPLE OR ITS CONTRIBUTORS BE LIABLE FOR ANY
+ * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+:root {
+    height: 100%;
+    /* overflow: hidden; */
+}
+
+:root {
+    --accent-color: #03a9f4;
+    --accent-color-b: #2196f3;
+    --accent-color-c: #3e82f7;
+    --toolbar-bg-color: #f3f3f3;
+    --toolbar-hover-bg-color: #eaeaea;
+    --selection-fg-color: white;
+    --selection-inactive-bg-color: #dadada;
+    --tab-selected-fg-color: #333;
+    --tab-selected-bg-color: var(--toolbar-bg-color);
+    --drop-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05),
+                   0 2px 4px rgba(0, 0, 0, 0.2),
+                   0 2px 6px rgba(0, 0, 0, 0.1);
+    --divider-color: #d0d0d0;
+    --focus-ring-inactive-shadow: 0 0 0 1px #e0e0e0;
+}
+
+.-theme-with-dark-background {
+    --accent-color: #32699f;
+    --accent-color-b: #2f84da;
+    --accent-color-c: #1f4061;
+    --toolbar-bg-color: #333333;
+    --toolbar-hover-bg-color: #202020;
+    --selection-fg-color: #cdcdcd;
+    --selection-inactive-bg-color: #333333;
+    --tab-selected-fg-color: #eaeaea;
+    --tab-selected-bg-color: black;
+    --drop-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2),
+                   0 2px 4px 2px rgba(0, 0, 0, 0.2),
+                   0 2px 6px 2px rgba(0, 0, 0, 0.1);
+    --divider-color: #525252;
+    --focus-ring-inactive-shadow: 0 0 0 1px #5a5a5a;
+}
+
+:root {
+    --focus-ring-active-shadow: 0 0 0 1px var(--accent-color);
+    --selection-bg-color: var(--accent-color-b);
+    --divider-border: 1px solid var(--divider-color);
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /* overflow: hidden; */
+    margin: 0;
+    cursor: default;
+    font-family: '.SFNSDisplay-Regular', 'Helvetica Neue', 'Lucida Grande', sans-serif;
+    font-size: 12px;
+    tab-size: 4;
+    -webkit-user-select: none;
+    color: #222;
+}
+
+.platform-linux {
+    color: rgb(48, 57, 66);
+    font-family: Roboto, Ubuntu, Arial, sans-serif;
+}
+
+.platform-mac {
+    color: rgb(48, 57, 66);
+    font-family: '.SFNSDisplay-Regular', 'Helvetica Neue', 'Lucida Grande', sans-serif;
+}
+
+.platform-windows {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.panel {
+    display: flex;
+    /* overflow: hidden; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: white;
+}
+
+.panel-sidebar {
+    overflow-x: hidden;
+    background-color: var(--toolbar-bg-color);
+}
+
+iframe.extension {
+    flex: auto;
+    width: 100%;
+    height: 100%;
+}
+
+iframe.panel.extension {
+    display: block;
+    height: 100%;
+}

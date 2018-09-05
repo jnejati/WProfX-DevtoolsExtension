@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/panel.css">
+</head>
+<body>
+	<div id='mainToolbar' class="toolbar-shadow">
+		 <input  type="checkbox" id="ui-checkbox-label1" >
+		 <label  class="dt-checkbox-text" for="ui-checkbox-label1">Critical path</label>
+		 <div  class="toolbar-divider toolbar-item"></div>
+
+		 <input  type="checkbox" id="ui-checkbox-label2">
+		 <label  class="dt-checkbox-text" for="ui-checkbox-label2">Dependencies</label>
+	   <div  class="toolbar-divider toolbar-item"></div>
+
+		 <!-- Download -->
+
+		 <button id='viewJson' class="toolbar-button toolbar-item" aria-label="Download JSON" title="Download JSON" disabled="true" >
+			 <!-- <span  class="toolbar-text toolbar-item">JSON</span> -->
+			 <span is="ui-icon"  > <img src="assets/img/largeicon-pretty-print-mask.svg"></img>
+			 </span>
+		 </button>
+
+		 <div class="toolbar-divider toolbar-item"></div>
+
+		 <div  class="toolbar-text toolbar-item">Emulation: </div>
+	   <span  class="toolbar-select-container toolbar-item">
+	      <select  class="toolbar-item" id="selectedDevice">
+	         <option  value="desktop">Desktop</option>
+					 <option  value="mobile">Mobile</option>
+	      </select>
+				<span is="ui-icon" class="myIcons"> <img  src="assets/img/smallicon-triangle-down-mask.svg"> </img></span>
+	   </span>
+		 <div class="toolbar-divider toolbar-item"></div>
+
+	   <span  class="toolbar-select-container toolbar-item" >
+	      <select  class="toolbar-item" id="networkSelect">
+					<option value= "No_throttling"> No throttling applied </option>
+				  <option value="GPRS"> GPRS (500ms, 50kb/s, 20kb/s) </option>
+				  <option value="Regular_2G"> Regular 2G (300ms, 250kb/s, 50kb/s) </option>
+				  <option value="Good_2G"> Good 2G (150ms, 450kb/s, 150kb/s) </option>
+				  <option value="Regular_3G"> Regular 3G (100ms, 750kb/s, 250kb/s) </option>
+				  <option value="Good_3G"> Good 3G (40ms, 1.5Mb/s, 750kb/s) </option>
+				  <option value="Regular_4G"> Regular 4G (20ms, 4.0Mb/s, 3.0Mb/s) </option>
+				  <option value="DSL"> DSL (5ms, 2.0Mb/s, 1.0Mb/s) </option>
+				  <option value="WiFi"> WiFi (2ms, 30Mb/s, 15Mb/s) </option>
+	      </select>
+				<span is="ui-icon"> <img  src="assets/img/smallicon-triangle-down-mask.svg"> </img></span>
+	   </span>
+		 <div  class="toolbar-divider toolbar-item"></div>
+		 <div class='toolbar-text toolbar-item ' id="input_div" title="Wait at least 6 seconds to capture 'Time To Interactive'">
+			 <span > Wait&hairsp; </span>
+			 <div id="minus" class='ccounter' >&#65293;</div>
+			 <input type="text"  value="0" id="count" class='ctext' min="0" max="10" readonly>
+			 <div  id="plus" class='ccounter' > &#65291;</div>
+			 <span >&hairsp;seconds after onLoad. </span>
+			 <div  class="toolbar-divider toolbar-item"></div>
+		 </div>
+		 <!-- <div class "tabbed-pane-right-toolbar toolbar ">
+			 <button id='reRun'  class="toolbar-button  btn-rerun" aria-label="Run WProfX" title="Run WProfX" >
+				<span style="color:white;"> Run WProfX </span>
+			 </button>
+		 </div> -->
+	   <!-- <span  class="toolbar-select-container toolbar-item">
+	      <select   name="feature" class="toolbar-item">
+	         <option  value="cache">Caching</option>
+	         <option  value="compression">Compression</option>
+	      </select>
+	      <span is="ui-icon"> <img  src="assets/img/smallicon-triangle-down-mask.svg"> </img></span>
+</span> -->
+	   <!-- </span> -->
+	</div>
+
+	<div  class="toolbar-shadow toolbar-text sticky" id='activityDescr' style='display: none;'></div>
+
+<!-- <textarea class="txtaRea" id='activityDescr' style='display: none;' rows="5" cols="100">Some text here</textarea> -->
+
+  <!-- <div class='pageHeader' > -->
+	<div class='txt-logo'>Double click on any area in the chart to view a compact version</div>
+	<img id= 'imgLogo' class='img-center' src="assets/img/wprof-logo-256.png"> </img>
+  <div id= 'txtLogo' class='txt-logo'>
+		<p><b>WProfX</b> extracts dependencies of activities during a page load.
+		<a href="http://wprofx.cs.stonybrook.edu" target="_blank"> Learn more </a></p>
+  </div>
+	<div id = 'captureDiv' class='btn-prime'>
+	<button class='btn-main' id="capture" style='display:inline-block;'>Analyze</button>
+	</div>
+<!-- </div> -->
+	<!-- <div class='btn-prime' id="input_div">
+		<span class='txt-logo'> Wait </span>
+		<input type="cbutton" value="-" id="minus" class='ccounter'>
+    <input type="text"  value="0" id="count" class='ctext'>
+    <input type="cbutton" value="+" id="plus" class='ccounter'>
+		<span class='txt-logo'> seconds after onLoadEventFired. </span>
+  </div> -->
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+			<div id="myProgress">
+			  <div id="myBar"></div>
+			</div>
+	    <p id='barTxt'>Initializing..</p>
+			<!-- <button class='stop' id="capture">Stop recording</button> -->
+	  </div>
+	</div>
+	<div id ="txt1" > </div>
+	<div id='legendDiv' class="legend-wrapper">
+  	<div id="legend"></div>
+		<div id="metricLegend"></div>
+  </div>
+
+  <div  id="parent">
+      <svg id="mySVG" class="svg-container"></svg>
+  </div>
+
+	<!--a id="downloadAnchorElem" style="display:none"></a-->
+	<script src="assets/js/util/common.js"> </script>
+	<script src="assets/js/util/tld.js"> </script>
+	<script src="assets/js/timeline/d3.min.js"></script>
+	<script src="assets/js/timeline/util.js"></script>
+	<script src="assets/js/timeline/timeline.js"></script>
+	<script src="assets/js/timeline/draw.js"></script>
+	<script src="assets/js/trace/traceParser.js"> </script>
+	<script src="panel.js"></script>
+	<script src="capture/traceGatherer.js"> </script>
+
+
+</body>
+</html>
