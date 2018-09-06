@@ -1522,6 +1522,7 @@ class Analyze {
             else{
               var _script_nodeId = this.findScriptingIdBeforeScripting(_nodeData);
             }
+            //TODO this.allDict[_script_nodeId]['endTime'] > this.allDict[_parseID]['endTime'] misses processLoadingEvents
             if (!(_script_nodeId == null)  && this.allDict[_script_nodeId]['endTime'] > this.allDict[_parseID]['endTime']){
                _tmp = this.edgeStart(this.allDict[_script_nodeId]['endTime'],
                                 this.allDict[_nodeId]['startTime']);
@@ -1944,7 +1945,7 @@ class Analyze {
  }
 
   findCpMaxEnd(_array, _tailTime){
-    var _max = -10;
+    var _max = -1000;
     var _max_id = null;
     var _length = _array.length;
     // console.log('_array');
@@ -1954,7 +1955,7 @@ class Analyze {
       var _arr = _array[i];
       var parentId = _arr[0];
       var parentTime = _arr[1];
-      if (parentTime > _max  && parentTime < _tailTime){
+      if (parentTime > _max  && parentTime <= _tailTime){
         _max = parentTime;
         _max_id = parentId;
       }
