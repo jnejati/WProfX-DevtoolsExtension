@@ -449,12 +449,21 @@ svg.prototype = {
                     .attr("x2", a1_end)
                     .attr("y1", a1_y)
                     .attr("y2", a2_y);
+                    console.log(a1_id + ' -> ' +  a2_id);
+                    console.log("a1_end + ', ' +  a1_y + ', ' + a2_y" );
+                    console.log(elem.time + ', ' +  a1.row + ', ' + a2.row );
+                if (!(a1_end < a2_start)){
+                  a2_start = a1_end;
+                }
                 d3.select("#line_v_" + a1_id + "__" + a2_id).transition() // Vert.
                     .duration(ttime)
                     .attr("x1", a1_end)
                     .attr("x2", a2_start)
                     .attr("y1", a2_y)
                     .attr("y2", a2_y);
+                    console.log("a1_end + ', ' +  a2_start + ', ' + a2_y" );
+                    console.log(elem.time + ', ' +  a2.startTime + ', ' + a2.row );
+                    console.log('--------------------------------------------');
             }
         });
     },
@@ -487,13 +496,13 @@ svg.prototype = {
     _setColor: function(active, color, lineId) {
         var size, state;
         if (active) {
-            size = "2px";
+            size = "1.5px";
             state = "visible";
             // bring line to the front
             //document.getElementById("graph").appendChild(document.getElementById(lineId));
         } else {
             color = "black";
-            size = "1px";
+            size = "0.5px";
             state = "hidden";
         }
 

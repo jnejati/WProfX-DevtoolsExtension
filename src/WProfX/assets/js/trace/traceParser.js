@@ -133,8 +133,8 @@ class Analyze {
     // console.log(this.networkLookupUrl);
     var p9 = p8.then(this.extractDependencies())
     .catch(err => util.displayError(err));
-    // console.log('this.depsParent');
-    // console.log(this.depsParent);
+    console.log('this.depsParent');
+    console.log(this.depsParent);
     var p10 = p9.then(this.findCriticalPath(this.lastActivity[0][0]))
     .then(this.criticalPath.reverse())
     .catch(err => util.displayError(err));
@@ -1390,6 +1390,27 @@ class Analyze {
   }
 
   // Find latest scripting before parsing
+  findBlockingScripts(activity_data){
+    var activity_startTime = activity_data['startTime'];
+    var activity_endTime = activity_data['endTime'];
+    var scriptList = [];
+    var _length = this.scriptList.length;
+    for (var i=0; i<_length;i++){
+      var scriptings = this.scriptList[i];
+      var script_id = scriptings[0];
+      var script_data = scriptings[1];
+      var _startTime = script_data['startTime'];
+      var _endTime = script_data['endTime'];
+      //var _url = script_data['url'];
+      //if _url not in ['', 'about:blank'] and activity_startTime > _startTime:
+      if  (activity_startTime < _startTime && activity_endTime > _endTime){
+        scriptList.push(script_id);
+        }
+      }
+        //print('In find_scripting_id', selected[0], activity_data)
+    return scriptList;
+  }
+
   findScriptingId(activity_data){
     var activity_startTime = activity_data['startTime'];
     var selected = ['', Infinity];
@@ -1839,6 +1860,22 @@ class Analyze {
                 }
                 this.depsParent[_nodeId].push([_parseID, a1_triggered]);
                 this.depsNext[_parseID].push(_nodeId);
+
+                //findBlockingScripts
+                var blockingScripts = this.findBlockingScripts(_nodeData);
+                for (var i=0; i< blockingScripts.length; i++){
+                  var _bscriptId = blockingScripts[i];
+                  var a2_startTime = this.allDict[_bscriptId]['startTime'];
+                  var a1_triggered = this.allDict[_bscriptId]['startTime'];
+                  this.deps.push({'time': a1_triggered, 'a1': _nodeId, 'a2': _bscriptId});
+                  this.depsParent[_bscriptId].push([_nodeId, a1_triggered]);
+                  var a2_startTime = this.allDict[_bscriptId]['endTime'];
+                  var a1_triggered = this.allDict[_bscriptId]['endTime'];
+                  this.deps.push({'time': a1_triggered, 'a1': _bscriptId, 'a2': _nodeId});
+                  this.depsParent[_nodeId].push([_bscriptId, a1_triggered]);
+                  //this.depsNext[_parseID].push(_nodeId);
+
+                }
               }
              else if (_nodeData['startTime'] > this.allDict[this.parse0Id]['startTime']){
                //console.log('url is null ');
@@ -1955,7 +1992,7 @@ class Analyze {
       var _arr = _array[i];
       var parentId = _arr[0];
       var parentTime = _arr[1];
-      if (parentTime > _max  && parentTime <= _tailTime){
+      if (parentTime > _max  && parentTime < _tailTime){
         _max = parentTime;
         _max_id = parentId;
       }

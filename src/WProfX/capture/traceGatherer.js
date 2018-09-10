@@ -76,7 +76,7 @@ class Gatherer {
 
          // await chrome.debugger.sendCommand(this.target, 'Page.navigate', {'url':this.url, 'ignoreCache': true});
          await chrome.debugger.sendCommand(this.target, 'Page.reload', {'ignoreCache': true});
-         console.log('Page.reload' +  this.target.tabId );
+         console.log('Page.reload: ' +  this.target.tabId );
          await chrome.debugger.onEvent.addListener(onEvent);
 
        }
