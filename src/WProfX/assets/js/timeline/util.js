@@ -234,7 +234,7 @@ util.legendHandler=function (){
 util.downloadHandler=function(myObj, url){
   console.log('In downloadHandler: ' + url );
   var fileName = tld.getDomain(url);
-  fileName = fileName.concat('.json');
+  //fileName = fileName.concat('.json');
   var dl = document.getElementById("viewJson");
   dl.addEventListener('click', (event) =>  util.jsonLink(event, myObj, fileName));
 };
@@ -359,11 +359,25 @@ util.formatobjInfo=function(_elem){
 
   if ('url' in _elem){
     _url = _elem.url;
+    if (_url !=null && _url.indexOf("stonybrook")!= -1){
+      _url = _url.replace("stonybrook", "anonymous");
+    }
+
+    _url = util.smartTrim(_url, 100);
   }
-  _url = util.smartTrim(_url, 100);
+  //
+  //Anonymous submission
+
   if ('fromScript' in _elem){
     _fromScript = _elem.fromScript;
+    if (_fromScript == null || _fromScript =='Null'){
+      _fromScript = 'Main HTML'
+    }
   }
+  else{
+    _fromScript = 'Main HTML'
+  }
+
   _fromScript = util.smartTrim(_fromScript, 100);
   _activity_id = _elem.activityId;
   _startTime = _elem.startTime;
@@ -372,20 +386,23 @@ util.formatobjInfo=function(_elem){
   if (_activity_id.split('_')[0] == "Networking"){
     _mimeType = _elem.mimeType;
     _size = _elem.transferSize;
-    _desc = '<span class="jsonId"> Id: ' + '<span class="jsonString"> ' + _activity_id +  '</span>' +
-            ', <span class="jsonId"> mimeType: ' + '<span class="jsonString"> ' + _mimeType +  '</span>' +
-            ', <span class="jsonId"> transferSize: ' + '<span class="jsonNumber"> ' + _size + '</span>' +
-            ', <span class="jsonId"> fromScript: ' + '<span class="jsonString"> ' + _fromScript + '</span>' +
-            '<br> <span class="jsonId"> startTime: ' + '<span class="jsonNumber"> ' + _startTime +  '(ms)</span>' +
-            ', <span class="jsonId"> endTime: ' + '<span class="jsonNumber"> ' + _endTime +  '(ms)</span>' +
-            ', <span class="jsonId"> URL: ' + '<span class="jsonString"> ' + _url +  '</span>' ;
+    _desc ='<span class="jsonId"> URL: ' + '<span class="jsonString"> ' + _url +  '</span>' +
+            ', <span class="jsonId"> Start: ' + '<span class="jsonNumber"> ' + _startTime +  '(ms)</span>' +
+            ', <span class="jsonId"> End: ' + '<span class="jsonNumber"> ' + _endTime +  '(ms)</span>' +
+             '<br> <span class="jsonId"> ActivityId: ' + '<span class="jsonString"> ' + _activity_id +  '</span>' +
+            ', <span class="jsonId"> Type: ' + '<span class="jsonString"> ' + _mimeType +  '</span>' +
+            ', <span class="jsonId"> Size: ' + '<span class="jsonNumber"> ' + _size + '</span>' +
+            ',  <span class="jsonId"> From: ' + '<span class="jsonString"> ' + _fromScript + '</span>'
+             ;
   }
   else{
-    _desc = '<span class="jsonId"> Id: ' + '<span class="jsonString"> ' + _activity_id +  '</span>' +
-            ', <span class="jsonId"> fromScript: ' + '<span class="jsonString"> ' + _fromScript + '</span>' +
-            '<br> <span class="jsonId"> startTime: ' + '<span class="jsonNumber"> ' + _startTime +  '(ms)</span>' +
-            ', <span class="jsonId"> endTime: ' + '<span class="jsonNumber"> ' + _endTime +  '(ms)</span>' +
-            ', <span class="jsonId"> URL: ' + '<span class="jsonString"> ' + _url +  '</span>' ;
+
+    _desc = '<span class="jsonId"> URL: ' + '<span class="jsonString"> ' + _url +  '</span>' +
+            ', <span class="jsonId"> Start: ' + '<span class="jsonNumber"> ' + _startTime +  '(ms)</span>' +
+            ', <span class="jsonId"> End: ' + '<span class="jsonNumber"> ' + _endTime +  '(ms)</span>' +
+             '<br> <span class="jsonId"> ActivityId: ' + '<span class="jsonString"> ' + _activity_id +  '</span>' +
+            ',  <span class="jsonId"> From: ' + '<span class="jsonString"> ' + _fromScript + '</span>'
+             ;
   }
   return _desc;
 }

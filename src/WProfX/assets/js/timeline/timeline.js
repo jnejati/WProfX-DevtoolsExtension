@@ -449,9 +449,9 @@ svg.prototype = {
                     .attr("x2", a1_end)
                     .attr("y1", a1_y)
                     .attr("y2", a2_y);
-                    console.log(a1_id + ' -> ' +  a2_id);
-                    console.log("a1_end + ', ' +  a1_y + ', ' + a2_y" );
-                    console.log(elem.time + ', ' +  a1.row + ', ' + a2.row );
+                    // console.log(a1_id + ' -> ' +  a2_id);
+                    // console.log("a1_end + ', ' +  a1_y + ', ' + a2_y" );
+                    // console.log(elem.time + ', ' +  a1.row + ', ' + a2.row );
                 if (!(a1_end < a2_start)){
                   a2_start = a1_end;
                 }
@@ -461,9 +461,9 @@ svg.prototype = {
                     .attr("x2", a2_start)
                     .attr("y1", a2_y)
                     .attr("y2", a2_y);
-                    console.log("a1_end + ', ' +  a2_start + ', ' + a2_y" );
-                    console.log(elem.time + ', ' +  a2.startTime + ', ' + a2.row );
-                    console.log('--------------------------------------------');
+                    // console.log("a1_end + ', ' +  a2_start + ', ' + a2_y" );
+                    // console.log(elem.time + ', ' +  a2.startTime + ', ' + a2.row );
+                    // console.log('--------------------------------------------');
             }
         });
     },
